@@ -1,7 +1,4 @@
 # frozen_string_literal: true
 
-module FFMonads
-  def self.foo
-    'bar'
-  end
-end
+require 'ff_monads/maybe'
+require 'ff_monads/mixin'
