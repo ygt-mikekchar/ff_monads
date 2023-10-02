@@ -2,11 +2,11 @@
 
 module FFMonads
   class NoValueError < StandardError
-    attr_reader :contents
+    attr_reader :source
 
-    def initialize(monad)
-      @contents = monad.to_h
-      super("Attempt to access unset value in monad: #{contents.inspect}")
+    def initialize(source)
+      @source = source
+      super("Attempt to access unset value in monad: #{source.to_h.inspect}")
     end
   end
 end

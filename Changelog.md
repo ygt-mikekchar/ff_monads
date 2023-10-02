@@ -5,10 +5,15 @@
   - [X] Sketch in a `Maybe` class
     - Is `Maybe` a good name?  I guess most people know what it means.
       Rust uses `Option`, which is also good.  Hmm...
-  - [ ] Tests
+  - [X] Tests
     - [X] `Mixin`
     - [X] `Some`
-    - [ ] `None`
+    - [X] `None`
+  - [X] Escape
+    - This is my version of "Do" notation.  It's closer to Rust's ? operator.
+      Basically `monad.!` returns the value in the monad or raises and exception.
+      `escape { some(monad.!) }` will catch the exception and return the monad
+      that did not have the value.
 
 ## Branch setup
 ### DONE
