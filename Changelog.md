@@ -10,6 +10,6 @@
       - Go with Ruby 3.2.2 for no good reason
     - [X] bundler,
     - [X] rubocop
-    - [ ] rspec,
+    - [X] rspec,
     - [ ] guard,
   - [ ] Make a minimal gem
