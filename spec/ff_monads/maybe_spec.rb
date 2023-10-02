@@ -45,9 +45,15 @@ RSpec.describe FFMonads::Maybe do
       end
     end
 
-    describe '!' do
+    describe 'value!' do
       it 'returns the value' do
-        expect(some(42).!).to eql(42)
+        expect(some(42).value!).to eql(42)
+      end
+    end
+
+    describe '!' do
+      it 'returns the Maybe' do
+        expect(some(42).!).to eql(some(42))
       end
     end
 
@@ -104,6 +110,12 @@ RSpec.describe FFMonads::Maybe do
     describe 'and_then' do
       it 'returns none' do
         expect(none.and_then { |_| none }).to eql(none)
+      end
+    end
+
+    describe 'value!' do
+      it 'raises an exception' do
+        expect { none.value! }.to raise_error(FFMonads::NoValueError)
       end
     end
 

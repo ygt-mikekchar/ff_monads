@@ -31,14 +31,18 @@ module FFMonads
         block.call(@value)
       end
 
-      def !
+      def value!
         @value
+      end
+
+      def !
+        self
       end
 
       def eql?(other)
         return false unless other.is_a?(Some)
 
-        @value.eql?(other.!)
+        @value.eql?(other.value!)
       end
 
       def to_s
@@ -65,6 +69,10 @@ module FFMonads
 
       def and_then(&)
         self
+      end
+
+      def value!
+        raise(NoValueError, self)
       end
 
       def !

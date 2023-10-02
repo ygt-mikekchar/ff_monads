@@ -1,7 +1,12 @@
 # Change Log
 
-## Branch maybe
+## Branch escape
 ### TODO
+  - [X] `value!` returns the value or raises an exception which is caught by `escape`
+  - [ ] `!` returns the monad or raises an exception which is caught by `escape`
+
+## Branch maybe (actually in main :-P)
+### DONE
   - [X] Sketch in a `Maybe` class
     - Is `Maybe` a good name?  I guess most people know what it means.
       Rust uses `Option`, which is also good.  Hmm...
