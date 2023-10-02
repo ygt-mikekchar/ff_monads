@@ -39,7 +39,7 @@ RSpec.describe FFMonads::Escape do
 
           result = escape do
             # FIXME: Some stupid editor plugin erases .! without assignment
-            _ = get_result
+            _ = get_result.!
             some(100)
           end
 
