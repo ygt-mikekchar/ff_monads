@@ -15,9 +15,11 @@ module FFMonads
     end
 
     class Some < Maybe
+      # rubocop: disable Lint/MissingSuper
       def initialize(value)
         @value = value
       end
+      # rubocop: enable Lint/MissingSuper
 
       def none?
         false
@@ -28,15 +30,21 @@ module FFMonads
       end
 
       def map(&block)
-        block.call(@value)
+        self.class.new(block.call(@value))
       end
 
       def and_then(&block)
-        self.class.some(block.call(@value))
+        block.call(@value)
       end
 
       def !
         @value
+      end
+
+      def eql?(other)
+        return false unless other.is_a?(Some)
+
+        @value.eql?(other.!)
       end
 
       def to_s
@@ -63,6 +71,10 @@ module FFMonads
 
       def !
         raise :no_value
+      end
+
+      def eql?(other)
+        other.is_a?(None)
       end
 
       def to_s

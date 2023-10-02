@@ -18,4 +18,66 @@ RSpec.describe FFMonads::Maybe do
       end
     end
   end
+
+  describe FFMonads::Maybe::Some do
+    describe 'none?' do
+      it 'always returns false' do
+        expect(some(42).none?).to eql(false)
+      end
+    end
+
+    describe 'some?' do
+      it 'always returns true' do
+        expect(some(42).some?).to eql(true)
+      end
+    end
+
+    describe 'map' do
+      it 'applies the value to a block, wrapping the result' do
+        expect(some(42).map { |x| x + 1 }).to eql(some(43))
+      end
+    end
+
+    describe 'and_then' do
+      it 'applies the value to a block, returning what the block returns' do
+        expect(some(42).and_then { |_| none }).to eql(none)
+      end
+    end
+
+    describe '!' do
+      it 'returns the value' do
+        expect(some(42).!).to eql(42)
+      end
+    end
+
+    describe 'eql?' do
+      context 'other is a Some containing the same value' do
+        it 'returns true' do
+          expect(some(42)).to eql(some(42))
+        end
+      end
+
+      context 'other is a Some containing a different value' do
+        it 'returns false' do
+          expect(some(42)).to_not eql(some(10))
+        end
+      end
+
+      context 'other is a different class' do
+        it 'returns false' do
+          expect(some(42)).to_not eql(42)
+        end
+      end
+    end
+
+    describe 'to_s' do
+      it 'outputs the value as a string' do
+        expect(some(42).to_s).to eql('some(42)')
+      end
+
+      it 'nests' do
+        expect(some(some(42)).to_s).to eql('some(some(42))')
+      end
+    end
+  end
 end
