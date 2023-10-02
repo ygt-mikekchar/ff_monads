@@ -1,0 +1,66 @@
+AllCops:
+  DisplayCopNames: true
+  NewCops: enable
+  SuggestExtensions: false
+  TargetRubyVersion: 3.2.2
+Layout:
+  IndentationWidth: 2
+Layout/CommentIndentation:
+  Enabled: false
+Layout/SpaceInLambdaLiteral:
+  EnforcedStyle: require_space
+Lint/AmbiguousBlockAssociation:
+  Exclude:
+    - 'spec/**/*.rb'
+Layout/ArgumentAlignment:
+  EnforcedStyle: with_first_argument
+Layout/FirstParameterIndentation:
+  EnforcedStyle: consistent
+  IndentationWidth: 2
+Layout/FirstMethodArgumentLineBreak:
+  Enabled: true
+Layout/FirstHashElementIndentation:
+  EnforcedStyle: consistent
+# https://github.com/rubocop-hq/rubocop/issues/8626
+Lint/UselessMethodDefinition:
+  Enabled: false
+Lint/ConstantDefinitionInBlock:
+  Exclude:
+    - 'spec/**/*'
+Metrics/AbcSize:
+  Exclude:
+    - 'spec/**/*'
+Metrics/BlockLength:
+  Exclude:
+    - 'Guardfile'
+    - 'spec/**/*'
+Metrics/MethodLength:
+  Exclude:
+    - 'spec/**/*'
+Metrics/ModuleLength:
+  Exclude:
+    - 'spec/**/*'
+Naming/VariableNumber:
+  Enabled: false
+Style/AndOr:
+  Enabled: false
+Style/CombinableLoops:
+  Exclude:
+    - 'app/contracts/**/*'
+Style/CommentAnnotation:
+  Enabled: false
+Style/Documentation:
+  Enabled: false
+# Disabled because ideally we'd like no_braces, but this produces some weird results
+# like forcing us to omit {} with array of hashes.
+Style/HashAsLastArrayItem:
+  Enabled: false
+# Re-enable this and WhileUntilModifier after LineLength has a reasonable value
+Style/IfUnlessModifier:
+  Enabled: false
+Style/MethodCalledOnDoEndBlock:
+  Enabled: true
+Style/SafeNavigation:
+  Enabled: false
+Style/WhileUntilModifier:
+  Enabled: false

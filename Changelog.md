@@ -9,7 +9,7 @@
     - [X] ruby
       - Go with Ruby 3.2.2 for no good reason
     - [X] bundler,
-    - [ ] guard,
+    - [X] rubocop
     - [ ] rspec,
-    - [ ] rubocop
+    - [ ] guard,
   - [ ] Make a minimal gem
