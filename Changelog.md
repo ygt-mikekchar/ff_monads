@@ -1,7 +1,7 @@
 # Change Log
 
 ## Branch setup
-### TODO
+### DONE
   - [X] Add a Changelog
   - [X] Test that `!` is a valid identifier in Ruby
     - It's weird that `!` is fine, but `?` is not.
@@ -12,4 +12,4 @@
     - [X] rubocop
     - [X] rspec,
     - [X] guard,
-  - [ ] Make a minimal gem
+  - [X] Make a minimal gem
