@@ -5,6 +5,7 @@
   - [X] Sketch in a `Maybe` class
     - Is `Maybe` a good name?  I guess most people know what it means.
       Rust uses `Option`, which is also good.  Hmm...
+  - [ ] Tests
 
 ## Branch setup
 ### DONE

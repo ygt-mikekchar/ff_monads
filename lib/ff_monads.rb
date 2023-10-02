@@ -1,4 +1,4 @@
 # frozen_string_literal: true
 
-require 'ff_monads/maybe'
-require 'ff_monads/mixin'
+require_relative 'ff_monads/maybe'
+require_relative 'ff_monads/mixin'

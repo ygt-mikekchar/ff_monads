@@ -1,9 +1,15 @@
-require 'ff_monads'
+# frozen_string_literal: true
+
+require_relative '../lib/ff_monads'
 
 RSpec.describe FFMonads do
-  describe 'foo' do
-    it 'returns bar' do
-      expect(FFMonads.foo).to eql('bar')
+  describe 'Mixin with extend' do
+    module Foo
+      extend FFMonads
+    end
+
+    it 'does something' do
+      expect(Foo.some(42).to_s).to eql('some(42)')
     end
   end
 end

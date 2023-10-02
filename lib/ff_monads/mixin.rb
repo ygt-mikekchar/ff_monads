@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
-require 'maybe'
+require_relative 'maybe'
 
 module FFMonads
-  include Maybe
+  include Maybe::Mixin
 end

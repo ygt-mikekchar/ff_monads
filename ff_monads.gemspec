@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 Gem::Specification.new do |s|
   s.name        = 'ff_monads'
   s.version     = '0.0.0'
@@ -10,4 +12,5 @@ Gem::Specification.new do |s|
     'https://https://github.com/ygt-mikekchar/ff_monads/blob/main/README.md'
   s.license = 'MIT'
   s.metadata['rubygems_mfa_required'] = 'true'
+  s.required_ruby_version = '3.2.2'
 end

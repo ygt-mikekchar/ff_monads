@@ -35,7 +35,7 @@ module FFMonads
     end
 
     def to_s
-      "Some(#{@value})"
+      "some(#{@value})"
     end
 
     def inspect
@@ -43,8 +43,6 @@ module FFMonads
     end
 
     class None < Maybe
-      def initialize; end
-
       def none?
         true
       end
@@ -66,16 +64,16 @@ module FFMonads
       end
 
       def to_s
-        'None()'
+        'none()'
       end
     end
 
     module Mixin
-      def Some(value)
+      def some(value)
         Maybe.some(value)
       end
 
-      def None
+      def none
         Maybe.none
       end
     end
