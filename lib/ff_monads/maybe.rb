@@ -2,14 +2,6 @@
 
 module FFMonads
   class Maybe
-    def self.some(value)
-      Some.new(value)
-    end
-
-    def self.none
-      None.new
-    end
-
     def inspect
       to_s
     end
@@ -84,12 +76,14 @@ module FFMonads
 
     module Mixin
       def some(value)
-        Maybe.some(value)
+        Some.new(value)
       end
 
       def none
-        Maybe.none
+        None.new
       end
     end
+
+    include Mixin
   end
 end
