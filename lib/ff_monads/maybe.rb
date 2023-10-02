@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require_relative 'error'
+
 module FFMonads
   class Maybe
     def inspect
@@ -42,6 +44,10 @@ module FFMonads
       def to_s
         "some(#{@value})"
       end
+
+      def to_h
+        { type: Some, value: @value }
+      end
     end
 
     class None < Maybe
@@ -62,7 +68,7 @@ module FFMonads
       end
 
       def !
-        raise :no_value
+        raise(NoValueError, self)
       end
 
       def eql?(other)
@@ -71,6 +77,10 @@ module FFMonads
 
       def to_s
         'none()'
+      end
+
+      def to_h
+        { type: None }
       end
     end
 
