@@ -1,7 +1,8 @@
 # frozen_string_literal: true
 
-require_relative '../../lib/ff_monads/error'
 require_relative '../../lib/ff_monads/maybe'
+require_relative '../../lib/ff_monads/error'
+require_relative '../../lib/ff_monads/escape'
 
 RSpec.describe FFMonads::Maybe do
   include FFMonads::Maybe::Mixin
@@ -45,15 +46,22 @@ RSpec.describe FFMonads::Maybe do
       end
     end
 
-    describe 'value!' do
+    describe 'v!' do
       it 'returns the value' do
-        expect(some(42).value!).to eql(42)
+        expect(some(42).v!).to eql(42)
       end
-    end
 
-    describe '!' do
-      it 'returns the Maybe' do
-        expect(some(42).!).to eql(some(42))
+      context 'ignoring return value' do
+        include FFMonads::Escape::Mixin
+
+        it 'does not trigger a Rubocop error' do
+          expect(
+            escape do
+              none.v!
+              some(100)
+            end
+          ).to eql(none)
+        end
       end
     end
 
@@ -113,15 +121,9 @@ RSpec.describe FFMonads::Maybe do
       end
     end
 
-    describe 'value!' do
+    describe 'v!' do
       it 'raises an exception' do
-        expect { none.value! }.to raise_error(FFMonads::NoValueError)
-      end
-    end
-
-    describe '!' do
-      it 'raises an exception' do
-        expect { none.! }.to raise_error(FFMonads::NoValueError)
+        expect { none.v! }.to raise_error(FFMonads::NoValueError)
       end
     end
 
