@@ -83,7 +83,30 @@
   
 </div>
 
-<h2>Defined Under Namespace</h2>
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    
+<p>Catch ‘NoValueError` exceptions, returning the monad that caused the issue.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+        <p class="example_title"><div class='inline'>
+<p>You can mix in this module.</p>
+</div></p>
+      
+      <pre class="example code"><code><span class='id identifier rubyid_include'>include</span> <span class='const'><span class='object_link'><a href="../FFMonads.html" title="FFMonads (module)">FFMonads</a></span></span><span class='op'>::</span><span class='const'>Escape</span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Escape/Mixin.html" title="FFMonads::Escape::Mixin (module)">Mixin</a></span></span></code></pre>
+    
+  </div>
+
+
+</div><h2>Defined Under Namespace</h2>
 <p class="children">
   
     
@@ -111,7 +134,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#escape-class_method" title="escape (class method)">.<strong>escape</strong>(&amp;block)  &#x21d2; Object </a>
+      <a href="#escape-class_method" title="escape (class method)">.<strong>escape</strong>(&amp;block)  &#x21d2; FFMonads::Maybe </a>
     
 
     
@@ -125,7 +148,9 @@
   
 
   
-    <span class="summary_desc"><div class='inline'></div></span>
+    <span class="summary_desc"><div class='inline'>
+<p>Return early from the given block if an evaluated monad has no value.</p>
+</div></span>
   
 </li>
 
@@ -142,26 +167,102 @@
       <div class="method_details first">
   <h3 class="signature first" id="escape-class_method">
   
-    .<strong>escape</strong>(&amp;block)  &#x21d2; <tt>Object</tt> 
+    .<strong>escape</strong>(&amp;block)  &#x21d2; <tt><span class='object_link'><a href="Maybe.html" title="FFMonads::Maybe (class)">FFMonads::Maybe</a></span></tt> 
   
 
   
 
   
-</h3><table class="source_code">
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Return early from the given block if an evaluated monad has no value.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+        <p class="example_title"><div class='inline'>
+<p>Monads that can be unwrapped will simply run to the end of the block.</p>
+</div></p>
+      
+      <pre class="example code"><code><span class='id identifier rubyid_monad'>monad</span> <span class='op'>=</span> <span class='id identifier rubyid_some'>some</span><span class='lparen'>(</span><span class='int'>42</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_escape'>escape</span> <span class='kw'>do</span>
+  <span class='id identifier rubyid_value'>value</span> <span class='op'>=</span> <span class='id identifier rubyid_monad'>monad</span><span class='period'>.</span><span class='id identifier rubyid_v!'>v!</span> <span class='comment'># monad has a value so it will continue
+</span>  <span class='id identifier rubyid_some'>some</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span> <span class='op'>+</span> <span class='int'>1</span><span class='rparen'>)</span>  <span class='comment'># it will return some(43)
+</span><span class='kw'>end</span></code></pre>
+    
+      
+        <p class="example_title"><div class='inline'>
+<p>Monads that can’t be unwrapped will return early</p>
+</div></p>
+      
+      <pre class="example code"><code><span class='id identifier rubyid_monad'>monad</span> <span class='op'>=</span> <span class='id identifier rubyid_none'>none</span>
+  <span class='id identifier rubyid_escape'>escape</span> <span class='kw'>do</span>
+    <span class='id identifier rubyid_value'>value</span> <span class='op'>=</span> <span class='id identifier rubyid_monad'>monad</span><span class='period'>.</span><span class='id identifier rubyid_v!'>v!</span> <span class='comment'># monad does not have a value so it will return none here
+</span>    <span class='id identifier rubyid_some'>some</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span> <span class='op'>+</span> <span class='int'>1</span><span class='rparen'>)</span>  <span class='comment'># this line will never be reached
+</span>  <span class='kw'>end</span></code></pre>
+    
+  </div>
+<p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>block</span>
+      
+      
+        <span class='type'>(<tt>Proc</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The block to call.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Maybe.html" title="FFMonads::Maybe (class)">FFMonads::Maybe</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The monad returned from the block.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
   <tr>
     <td>
       <pre class="lines">
 
 
-7
-8
-9
-10
-11</pre>
+25
+26
+27
+28
+29</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/ff_monads/escape.rb', line 7</span>
+      <pre class="code"><span class="info file"># File 'lib/ff_monads/escape.rb', line 25</span>
 
 <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_escape'>escape</span><span class='lparen'>(</span><span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_block'>block</span><span class='period'>.</span><span class='id identifier rubyid_call'>call</span>
@@ -178,7 +279,7 @@
 </div>
 
       <div id="footer">
-  Generated on Tue Oct  3 09:40:44 2023 by
+  Generated on Wed Oct  4 09:39:16 2023 by
   <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.34 (ruby-3.2.2).
 </div>
