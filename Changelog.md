@@ -1,5 +1,12 @@
 # Change Log
 
+## Branch docs
+### TODO
+  - [X] Write documentation for error.rb
+  - [X] Write documentation for `Escape`
+  - [X] Write a slightly better README
+  - [ ] Write documentation for `Maybe`
+
 ## Branch escape
 ### DONE
   - [X] `value!` returns the value or raises an exception which is caught by `escape`
