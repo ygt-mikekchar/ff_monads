@@ -66,10 +66,54 @@
   <li>provide a more idiomatic FP usage experience</li>
   <li>provide more functionality</li>
 </ul>
+
+<h2 id="change-log">Change log</h2>
+
+<p>See <a href="Changelog.md">the change log</a></p>
+
+<p>Each branch in the code is listed in the change log.  Branches that
+are not merged will have a <code>TODO</code> section heading with some points
+indicating what I plan to do.  Each item in the <code>TODO</code> section is
+checked off as I do it.  More items are usually added over time as
+I discover what I need to do.</p>
+
+<p>Merged branches will have a section called <code>DONE</code> that lists all
+of the things I did in that branch.  As much as possible items in the
+change log will correspond to commits in git.  If you do a <code>git blame</code>
+on the Changelog, you will find the commit where that work was done.
+I’m not strict about that, so often it doesn’t work, but I try to
+do it as often as I remember.</p>
+
+<h2 id="how-to-do-various-things">How to do various things</h2>
+
+<h3 id="tests">Tests</h3>
+
+<p>To run the tests once
+<code>bundle exec rspec</code></p>
+
+<p>To watch the directories and run the tests after changes
+<code>bundle exec guard</code></p>
+
+<h3 id="lint">Lint</h3>
+
+<p>To run the rubocop linter
+<code>bundle exec rubocop</code></p>
+
+<p>To automatically fix linting warnings (warning: not always safe)
+<code>bundle exec rubocop -A</code></p>
+
+<h3 id="documentation">Documentation</h3>
+
+<p>To generate the documentation
+<code>yard doc</code></p>
+
+<p>To display how bad I am at writing documentation</p>
+
+<p><code>yard stats</code></p>
 </div></div>
 
       <div id="footer">
-  Generated on Wed Oct  4 09:39:16 2023 by
+  Generated on Sun Oct  8 15:55:15 2023 by
   <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.34 (ruby-3.2.2).
 </div>
