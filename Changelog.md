@@ -1,7 +1,13 @@
 # Change Log
 
-## Branch docs
+## Branch matching
 ### TODO
+  - [X] Review the docs for pattern matching in Ruby.
+    - (Docs are here)[https://docs.ruby-lang.org/en/3.0/syntax/pattern_matching_rdoc.html]
+  - [ ] Try to match `Maybe`
+
+## Branch docs
+### DONE
   - [X] Write documentation for error.rb
   - [X] Write documentation for `Escape`
   - [X] Write a slightly better README
