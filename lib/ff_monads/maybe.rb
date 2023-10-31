@@ -90,6 +90,10 @@ module FFMonads
       end
       # rubocop: enable Lint/MissingSuper
 
+      def deconstruct
+        [@value]
+      end
+
       def none?
         false
       end
@@ -126,6 +130,10 @@ module FFMonads
     end
 
     class None < Maybe
+      def deconstruct
+        []
+      end
+
       def none?
         true
       end
@@ -160,6 +168,12 @@ module FFMonads
     end
 
     module Mixin
+      def add_classes
+        pp self
+        const_set('Some', Some)
+        const_set('None', None)
+      end
+
       def some(value)
         Some.new(value)
       end

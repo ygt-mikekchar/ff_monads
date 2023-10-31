@@ -6,6 +6,7 @@ require_relative '../../lib/ff_monads/escape'
 
 RSpec.describe FFMonads::Maybe do
   include FFMonads::Maybe::Mixin
+  extend FFMonads::Maybe::Mixin
 
   describe 'constructors' do
     describe 'some' do
@@ -150,6 +151,55 @@ RSpec.describe FFMonads::Maybe do
     describe 'to_s' do
       it 'outputs the value as a string' do
         expect(none.to_s).to eql('none()')
+      end
+    end
+  end
+
+  describe 'pattern matching' do
+    it 'matches on classes' do
+      result = case some(42)
+               in FFMonads::Maybe::Some
+                 true
+               in FFMonads::Maybe::None
+                 false
+               end
+
+      expect(result).to eql(true)
+    end
+
+    it 'matches on values' do
+      result = case some(42)
+               in FFMonads::Maybe::Some(Integer => x)
+                 x
+               in FFMonads::Maybe::None
+                 nil
+               end
+
+      expect(result).to eql(42)
+    end
+
+    describe 'mixing in Some and None' do
+      add_classes
+      it 'can use Some' do
+        result = case some(42)
+                 in Some(Integer => x)
+                   x
+                 else
+                   false
+                 end
+
+        expect(result).to eql(42)
+      end
+
+      it 'can use None' do
+        result = case none
+                 in None
+                   true
+                 else
+                   false
+                 end
+
+        expect(result).to eql(true)
       end
     end
   end
