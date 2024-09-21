@@ -8,7 +8,7 @@ module FFMonads
   # to operate on an optional value without crashing when the value
   # does not exist.
   # @example You can mix in this module.
-  #   include FFMondas::Maybe::Mixin
+  #   include FFMonads::Maybe::Mixin
   # @example A value that exists.
   #   some(42)
   # @example A value that does not exist.
