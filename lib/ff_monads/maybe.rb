@@ -169,7 +169,6 @@ module FFMonads
 
     module Mixin
       def add_classes
-        pp self
         const_set('Some', Some)
         const_set('None', None)
       end
