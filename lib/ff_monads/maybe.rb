@@ -29,10 +29,10 @@ module FFMonads
     # It takes the value from the Maybe, transforms it,
     # and returns it without putting it back into a Maybe.
     # It assumes the block will put the value back into
-    # a Maybe (or other monad).
-    # @param [Block] A block accepting and returning a transformed value wrapped in a Monad.
-    # @return [FFMonads::Maybe] Monad returned from the block.
-    # @example `.and_then` allows you to choose the monad to return.
+    # a Maybe.
+    # @param [Block] A block accepting and returning a transformed value wrapped in a Maybe.
+    # @return [FFMonads::Maybe] Maybe returned from the block.
+    # @example `.and_then` allows you to choose the Maybe to return.
     #   # This returns none
     #   some(0).and_then do |x|
     #     if x == 0
@@ -74,7 +74,7 @@ module FFMonads
     # @return [Hash<Symbol, Value>]
     # @example
     #   some(42).to_h # returns { type: Some, value: 42 }
-    #   none.to_h     # returns { type: None }
+    #   none.to_h     # returns { type: None, value: nil }
     def to_h; end
 
     # Returns a string representation of the Maybe
@@ -121,7 +121,7 @@ module FFMonads
       end
 
       def to_s
-        "some(#{@value})"
+        "some(#{@value.inspect})"
       end
 
       def to_h
@@ -163,7 +163,7 @@ module FFMonads
       end
 
       def to_h
-        { type: None }
+        { type: None, value: nil }
       end
     end
 
