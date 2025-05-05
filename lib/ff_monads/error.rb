@@ -2,7 +2,7 @@
 
 module FFMonads
   # This exception will get raised when trying to get the value of
-  # a monad that has no value set.  For example `none.v!`.
+  # a monad that has no value set.  For example `none.value!`.
   class NoValueError < StandardError
     attr_reader :source
 

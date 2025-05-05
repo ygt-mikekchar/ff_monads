@@ -2,10 +2,10 @@
 
 require_relative 'result'
 require_relative 'maybe'
-require_relative 'escape'
+require_relative 'fail_early'
 
 module FFMonads
   include Maybe::Mixin
   include Result::Mixin
-  include Escape::Mixin
+  include FailEarly::Mixin
 end

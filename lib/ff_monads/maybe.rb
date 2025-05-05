@@ -55,7 +55,7 @@ module FFMonads
     # Raises NoValueError if the Maybe is none.
     # @return [Something] the value in the Maybe.
     # @raise [FFMonads::NoValueError] if the Maybe is none.
-    def v!; end
+    def value!; end
 
     # Returns true if this Maybe contains an equivalent value as the other Maybe.
     # @param other [FFMonads::Maybe] the other Maybe to compare to
@@ -114,14 +114,14 @@ module FFMonads
         block.call(@value)
       end
 
-      def v!
+      def value!
         @value
       end
 
       def eql?(other)
         return false unless other.is_a?(Some)
 
-        @value.eql?(other.v!)
+        @value.eql?(other.value!)
       end
 
       def inspect
@@ -164,7 +164,7 @@ module FFMonads
         self
       end
 
-      def v!
+      def value!
         raise(NoValueError, self)
       end
 
