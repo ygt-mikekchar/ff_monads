@@ -11,13 +11,13 @@ RSpec.describe FFMonads::Maybe do
   describe 'constructors' do
     describe 'some' do
       it 'creates a Maybe with a value' do
-        expect(some(42).to_s).to eql('some(42)')
+        expect(some(42).inspect).to eql('Some(42)')
       end
     end
 
     describe 'none' do
       it 'creates a Maybe without a value' do
-        expect(none.to_s).to eql('none()')
+        expect(none.inspect).to eql('None()')
       end
     end
   end
@@ -86,13 +86,13 @@ RSpec.describe FFMonads::Maybe do
       end
     end
 
-    describe 'to_s' do
+    describe 'inspect' do
       it 'outputs the value as a string' do
-        expect(some(42).to_s).to eql('some(42)')
+        expect(some(42).inspect).to eql('Some(42)')
       end
 
       it 'nests' do
-        expect(some(some(42)).to_s).to eql('some(some(42))')
+        expect(some(some(42)).inspect).to eql('Some(Some(42))')
       end
     end
   end
@@ -148,9 +148,9 @@ RSpec.describe FFMonads::Maybe do
       end
     end
 
-    describe 'to_s' do
+    describe 'inspect' do
       it 'outputs the value as a string' do
-        expect(none.to_s).to eql('none()')
+        expect(none.inspect).to eql('None()')
       end
     end
   end
