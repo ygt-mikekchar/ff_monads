@@ -18,20 +18,20 @@ module FFMonads
     # Applies a potentially failed value to a block.
     # It takes the value from the Result, transforms it,
     # puts back into a Result and returns it.
-    # @param [Block] A block accepting the value and returning a transformed value.
+    # @param block [Block] A block accepting the value and returning a transformed value.
     # @return [FFMonads::Result] The value from the block wrapped in a Result.
     # @example Called with success, it will always return success.
     #   success(42).map {|x| x + 1} # returns success(43)
     # @example Called with failure, it will always return failure.
     #   failure("divide by zero").map {|x| x + 1} # returns failure("divide by zero")
-    def map(&); end
+    def map(&block); end # rubocop: disable Naming/BlockForwarding
 
     # Applies an potentially failed value to a block.
     # It takes the value from the Result, transforms it,
     # and returns it without putting it back into a Result.
     # It assumes the block will put the value back into
     # a Result.
-    # @param [Block] A block accepting and returning a transformed value wrapped in a Result.
+    # @param block [Block] A block accepting and returning a transformed value wrapped in a Result.
     # @return [FFMonads::Maybe] Result returned from the block.
     # @example `.and_then` allows you to choose the Result to return.
     #   # This returns failure
@@ -42,7 +42,7 @@ module FFMonads
     #       success(100 / x)
     #     end
     #   end
-    def and_then(&); end
+    def and_then(&block); end # rubocop: disable Naming/BlockForwarding
 
     # Returns true if the Result is a failure.
     # @return [Boolean]
@@ -64,9 +64,9 @@ module FFMonads
     def failure; end
 
     # Returns true if this Result contains an equivalent value as the other Result.
-    # @param [FFMonads::Result] other
+    # @param other [FFMonads::Result]
     # @return [Boolean]
-    def eql?; end
+    def eql?(other); end
 
     # Returns a string representation of the Result.
     # @return [String]
@@ -89,6 +89,7 @@ module FFMonads
       to_s
     end
 
+    # Represents a value that succeeded.
     class Success < Result
       # rubocop: disable Lint/MissingSuper
       def initialize(value)
@@ -96,6 +97,15 @@ module FFMonads
       end
       # rubocop: enable Lint/MissingSuper
 
+      # deconstruct value for case statements
+      # @return [Array]
+      # @example
+      #   case success(42)
+      #   in Success(Integer => x)
+      #     x
+      #   in Failure(String => y)
+      #     y
+      #   end
       def deconstruct
         [@value]
       end
@@ -146,6 +156,15 @@ module FFMonads
       end
       # rubocop: enable Lint/MissingSuper
 
+      # deconstruct value for case statements
+      # @return [Array]
+      # @example
+      #   case success(42)
+      #   in Success(Integer => x)
+      #     x
+      #   in Failure(String => y)
+      #     y
+      #   end
       def deconstruct
         [@value]
       end
@@ -189,16 +208,27 @@ module FFMonads
       end
     end
 
+    # Mixin module for Result
+    # @example You can mix in Result functionality with:
+    #   include FFMonads::Result::Mixin
     module Mixin
+      # Mix in Success and Failure constants to the current Class/Module.
+      # Gives access to Success and Failure without needing a namespace.
       def add_classes
         const_set('Success', Success)
         const_set('Failure', Failure)
       end
 
+      # Create a Success containing the value
+      # @param value [Something] the value to wrap in a Success
+      # @return [Something] The value wrapped in a Success
       def success(value)
         Success.new(value)
       end
 
+      # Create a Failure containing the value
+      # @param value [Something] the value to wrap in a Failure
+      # @return [Something] The value wrapped in a Failure
       def failure(value)
         Failure.new(value)
       end
