@@ -179,27 +179,45 @@ RSpec.describe FFMonads::Maybe do
     end
 
     describe 'mixing in Some and None' do
-      add_classes
+      # Note: If add_classes is used in a module_eval block,
+      # the resultant constant can't be accessed in functions
+      # defined on the module itself.  This is a limitation in
+      # Ruby.  For that reason, I'm creating modules in these
+      # tests rather than using `Module.new`.
       it 'can use Some' do
-        result = case some(42)
-                 in Some(Integer => x)
-                   x
-                 else
-                   false
-                 end
+        module TestCanUseSome
+          extend FFMonads::Maybe::Mixin
+          add_classes
 
-        expect(result).to eql(42)
+          def self.test
+            case some(42)
+            in Some(Integer => x)
+              x
+            in None
+              false
+            end
+          end
+        end
+
+        expect(TestCanUseSome.test).to eql(42)
       end
 
       it 'can use None' do
-        result = case none
-                 in None
-                   true
-                 else
-                   false
-                 end
+        module TestCanUseNone
+          extend FFMonads::Maybe::Mixin
+          add_classes
 
-        expect(result).to eql(true)
+          def self.test
+            case none
+            in Some(Integer => x)
+              x
+            in None
+              false
+            end
+          end
+        end
+
+        expect(TestCanUseNone.test).to eql(false)
       end
     end
   end
