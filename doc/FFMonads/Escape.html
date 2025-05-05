@@ -193,7 +193,7 @@
       
       <pre class="example code"><code><span class='id identifier rubyid_monad'>monad</span> <span class='op'>=</span> <span class='id identifier rubyid_some'>some</span><span class='lparen'>(</span><span class='int'>42</span><span class='rparen'>)</span>
 <span class='id identifier rubyid_escape'>escape</span> <span class='kw'>do</span>
-  <span class='id identifier rubyid_value'>value</span> <span class='op'>=</span> <span class='id identifier rubyid_monad'>monad</span><span class='period'>.</span><span class='id identifier rubyid_v!'>v!</span> <span class='comment'># monad has a value so it will continue
+  <span class='id identifier rubyid_value'>value</span> <span class='op'>=</span> <span class='id identifier rubyid_monad'>monad</span><span class='period'>.</span><span class='id identifier rubyid_value!'>value!</span> <span class='comment'># monad has a value so it will continue
 </span>  <span class='id identifier rubyid_some'>some</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span> <span class='op'>+</span> <span class='int'>1</span><span class='rparen'>)</span>  <span class='comment'># it will return some(43)
 </span><span class='kw'>end</span></code></pre>
     
@@ -204,7 +204,7 @@
       
       <pre class="example code"><code><span class='id identifier rubyid_monad'>monad</span> <span class='op'>=</span> <span class='id identifier rubyid_none'>none</span>
   <span class='id identifier rubyid_escape'>escape</span> <span class='kw'>do</span>
-    <span class='id identifier rubyid_value'>value</span> <span class='op'>=</span> <span class='id identifier rubyid_monad'>monad</span><span class='period'>.</span><span class='id identifier rubyid_v!'>v!</span> <span class='comment'># monad does not have a value so it will return none here
+    <span class='id identifier rubyid_value'>value</span> <span class='op'>=</span> <span class='id identifier rubyid_monad'>monad</span><span class='period'>.</span><span class='id identifier rubyid_value!'>value!</span> <span class='comment'># monad does not have a value so it will return none here
 </span>    <span class='id identifier rubyid_some'>some</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span> <span class='op'>+</span> <span class='int'>1</span><span class='rparen'>)</span>  <span class='comment'># this line will never be reached
 </span>  <span class='kw'>end</span></code></pre>
     
@@ -279,7 +279,7 @@
 </div>
 
       <div id="footer">
-  Generated on Mon May  5 10:36:29 2025 by
+  Generated on Mon May  5 11:02:50 2025 by
   <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.37 (ruby-3.3.6).
 </div>

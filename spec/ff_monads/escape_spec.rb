@@ -10,11 +10,11 @@ RSpec.describe FFMonads::Escape do
   context FFMonads::Maybe do
     include FFMonads::Maybe::Mixin
 
-    context 'escape with v!' do
+    context 'escape with value!' do
       context FFMonads::Maybe::Some do
         it 'returns return value from the block' do
           monad = some(42)
-          result = escape { some(monad.v! + 1) }
+          result = escape { some(monad.value! + 1) }
 
           expect(result).to eql(some(43))
         end
@@ -23,7 +23,7 @@ RSpec.describe FFMonads::Escape do
       context FFMonads::Maybe::None do
         it 'returns none' do
           monad = none
-          result = escape { some(monad.v! + 1) }
+          result = escape { some(monad.value! + 1) }
 
           expect(result).to eql(none)
         end

@@ -56,7 +56,7 @@ module FFMonads
     # Raises NoValueError if the Result is a Failure.
     # @return [Something] the value in the Result.
     # @raise [FFMonads::NoValueError] if the Result is failure.
-    def v!; end
+    def value!; end
 
     # Returns the value in a Failure.
     # Return nil if the Result is not a Failure.
@@ -120,7 +120,7 @@ module FFMonads
         block.call(@value)
       end
 
-      def v!
+      def value!
         @value
       end
 
@@ -131,7 +131,7 @@ module FFMonads
       def eql?(other)
         return false unless other.is_a?(Success)
 
-        @value.eql?(other.v!)
+        @value.eql?(other.value!)
       end
 
       def inspect
@@ -179,7 +179,7 @@ module FFMonads
         self
       end
 
-      def v!
+      def value!
         raise(NoValueError, self)
       end
 

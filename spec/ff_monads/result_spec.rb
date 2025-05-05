@@ -47,9 +47,9 @@ RSpec.describe FFMonads::Result do
       end
     end
 
-    describe 'v!' do
+    describe 'value!' do
       it 'returns the value' do
-        expect(success(42).v!).to eql(42)
+        expect(success(42).value!).to eql(42)
       end
 
       context 'ignoring return value' do
@@ -58,7 +58,7 @@ RSpec.describe FFMonads::Result do
         it 'does not trigger a Rubocop error' do
           expect(
             escape do
-              failure('foobar').v!
+              failure('foobar').value!
               success(100)
             end
           ).to eql(failure('foobar'))
@@ -122,9 +122,9 @@ RSpec.describe FFMonads::Result do
       end
     end
 
-    describe 'v!' do
+    describe 'value!' do
       it 'raises an exception' do
-        expect { failure('foobar').v! }.to raise_error(FFMonads::NoValueError)
+        expect { failure('foobar').value! }.to raise_error(FFMonads::NoValueError)
       end
     end
 
