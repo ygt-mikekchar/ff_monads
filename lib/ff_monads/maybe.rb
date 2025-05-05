@@ -23,7 +23,7 @@ module FFMonads
     #   some(42).map {|x| x + 1} # returns some(43)
     # @example Called with none, it will always return none.
     #   none.map {|x| x + 1} # returns none
-    def map(&block); end # rubocop: disable Naming/BlockForwarding
+    def map(&block); end
 
     # Applies an optional value to a block.
     # It takes the value from the Maybe, transforms it,
@@ -41,7 +41,7 @@ module FFMonads
     #       some(100 / x)
     #     end
     #   end
-    def and_then(&block); end # rubocop: disable Naming/BlockForwarding
+    def and_then(&block); end
 
     # Returns true if the Maybe is none.
     # @return [Boolean]
@@ -62,13 +62,6 @@ module FFMonads
     # @return [Boolean]
     def eql?(other); end
 
-    # Returns a string representation of the Maybe.
-    # @return [String]
-    # @example Mostly used for #inspect.
-    #   some(42).to_s # returns "some(42)"
-    #   none.to_s     # returns "none"
-    def to_s; end
-
     # Returns a hash representation of the Maybe.
     # Possibly for serialisation???
     # @return [Hash<Symbol, Value>]
@@ -78,10 +71,11 @@ module FFMonads
     def to_h; end
 
     # Returns a string representation of the Maybe
-    # @see #to_s
-    def inspect
-      to_s
-    end
+    # @return [String]
+    # @example
+    #   some(42).inspect # returns "Some(42)"
+    #   none().inspect # returns "None()"
+    def inspect; end
 
     # Represents a value that exists.
     class Some < Maybe
@@ -130,8 +124,8 @@ module FFMonads
         @value.eql?(other.v!)
       end
 
-      def to_s
-        "some(#{@value.inspect})"
+      def inspect
+        "Some(#{@value.inspect})"
       end
 
       def to_h
@@ -178,8 +172,8 @@ module FFMonads
         other.is_a?(None)
       end
 
-      def to_s
-        'none()'
+      def inspect
+        'None()'
       end
 
       def to_h

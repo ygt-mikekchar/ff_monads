@@ -11,13 +11,13 @@ RSpec.describe FFMonads::Result do
   describe 'constructors' do
     describe 'success' do
       it 'creates a Result with a successful value' do
-        expect(success(42).to_s).to eql('success(42)')
+        expect(success(42).inspect).to eql('Success(42)')
       end
     end
 
     describe 'failure' do
       it 'creates a Maybe with a failed value' do
-        expect(failure('divide by zero').to_s).to eql('failure("divide by zero")')
+        expect(failure('divide by zero').inspect).to eql('Failure("divide by zero")')
       end
     end
   end
@@ -86,13 +86,13 @@ RSpec.describe FFMonads::Result do
       end
     end
 
-    describe 'to_s' do
+    describe 'inspect' do
       it 'outputs the value as a string' do
-        expect(success(42).to_s).to eql('success(42)')
+        expect(success(42).inspect).to eql('Success(42)')
       end
 
       it 'nests' do
-        expect(success(success(42)).to_s).to eql('success(success(42))')
+        expect(success(success(42)).inspect).to eql('Success(Success(42))')
       end
     end
   end
@@ -156,9 +156,9 @@ RSpec.describe FFMonads::Result do
       end
     end
 
-    describe 'to_s' do
+    describe 'inspect' do
       it 'outputs the value as a string' do
-        expect(failure('foobar').to_s).to eql('failure("foobar")')
+        expect(failure('foobar').inspect).to eql('Failure("foobar")')
       end
     end
   end

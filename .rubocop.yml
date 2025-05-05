@@ -42,6 +42,8 @@ Metrics/ModuleLength:
     - 'spec/**/*'
 Naming/VariableNumber:
   Enabled: false
+Naming/BlockForwarding:
+  Enabled: false
 Style/AndOr:
   Enabled: false
 Style/CombinableLoops:

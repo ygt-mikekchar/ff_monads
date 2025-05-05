@@ -24,7 +24,7 @@ module FFMonads
     #   success(42).map {|x| x + 1} # returns success(43)
     # @example Called with failure, it will always return failure.
     #   failure("divide by zero").map {|x| x + 1} # returns failure("divide by zero")
-    def map(&block); end # rubocop: disable Naming/BlockForwarding
+    def map(&block); end
 
     # Applies an potentially failed value to a block.
     # It takes the value from the Result, transforms it,
@@ -42,7 +42,7 @@ module FFMonads
     #       success(100 / x)
     #     end
     #   end
-    def and_then(&block); end # rubocop: disable Naming/BlockForwarding
+    def and_then(&block); end
 
     # Returns true if the Result is a failure.
     # @return [Boolean]
@@ -70,10 +70,10 @@ module FFMonads
 
     # Returns a string representation of the Result.
     # @return [String]
-    # @example Mostly used for #inspect.
-    #   success(42).to_s # returns "success(42)"
-    #   failure("divide by zero").to_s # returns "failure"
-    def to_s; end
+    # @example
+    #   success(42).inspect # returns "Success(42)"
+    #   failure("divide by zero").inspect # returns "Failure('divide by zero')"
+    def inspect; end
 
     # Returns a hash representation of the Result.
     # Possibly for serialisation???
@@ -82,12 +82,6 @@ module FFMonads
     #   success(42).to_h # returns { type: Success, value: 42 }
     #   failure("divide by zero").to_h # returns { type: Failure, value: "divide by zero" }
     def to_h; end
-
-    # Returns a string representation of the Result
-    # @see #to_s
-    def inspect
-      to_s
-    end
 
     # Represents a value that succeeded.
     class Success < Result
@@ -140,8 +134,8 @@ module FFMonads
         @value.eql?(other.v!)
       end
 
-      def to_s
-        "success(#{@value.inspect})"
+      def inspect
+        "Success(#{@value.inspect})"
       end
 
       def to_h
@@ -199,8 +193,8 @@ module FFMonads
         @value.eql?(other.failure)
       end
 
-      def to_s
-        "failure(#{@value.inspect})"
+      def inspect
+        "Failure(#{@value.inspect})"
       end
 
       def to_h

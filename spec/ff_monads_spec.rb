@@ -9,7 +9,7 @@ RSpec.describe FFMonads do
     end
 
     it 'does something' do
-      expect(ModuleFoo.some(42).to_s).to eql('some(42)')
+      expect(ModuleFoo.some(42).inspect).to eql('Some(42)')
     end
   end
 
@@ -23,7 +23,7 @@ RSpec.describe FFMonads do
     end
 
     it 'does something' do
-      expect(ClassFoo.new.some_forty_two.to_s).to eql('some(42)')
+      expect(ClassFoo.new.some_forty_two.inspect).to eql('Some(42)')
     end
   end
 end
