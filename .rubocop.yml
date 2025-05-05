@@ -8,7 +8,9 @@ Layout:
 Layout/CommentIndentation:
   Enabled: false
 Layout/LeadingCommentSpace:
-  Enabled: false
+  AllowRBSInlineAnnotation: true
+Layout/LineLength:
+  AllowedPatterns: ['\A\s*#:']
 Layout/SpaceInLambdaLiteral:
   EnforcedStyle: require_space
 Lint/AmbiguousBlockAssociation:
