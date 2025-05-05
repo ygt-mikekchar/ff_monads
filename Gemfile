@@ -8,4 +8,6 @@ group :development, :test do
   gem 'pry-nav'
   gem 'rspec'
   gem 'rubocop', require: false
+  gem 'sorbet'
+  gem 'tapioca'
 end
