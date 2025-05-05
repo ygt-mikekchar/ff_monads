@@ -2,7 +2,7 @@
 
 require_relative '../../lib/ff_monads/result'
 require_relative '../../lib/ff_monads/error'
-require_relative '../../lib/ff_monads/escape'
+require_relative '../../lib/ff_monads/fail_early'
 
 RSpec.describe FFMonads::Result do
   include FFMonads::Result::Mixin
@@ -53,11 +53,11 @@ RSpec.describe FFMonads::Result do
       end
 
       context 'ignoring return value' do
-        include FFMonads::Escape::Mixin
+        include FFMonads::FailEarly::Mixin
 
         it 'does not trigger a Rubocop error' do
           expect(
-            escape do
+            fail_early do
               failure('foobar').value!
               success(100)
             end
