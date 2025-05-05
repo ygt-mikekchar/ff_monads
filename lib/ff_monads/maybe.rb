@@ -9,28 +9,28 @@ module FFMonads
   # does not exist.
   # @example You can mix in this module.
   #   include FFMonads::Maybe::Mixin
-  # @example A value that exists.
+  # @example a value that exists.
   #   some(42)
-  # @example A value that does not exist.
+  # @example a value that does not exist.
   #   none
   class Maybe
     # Applies an optional value to a block.
     # It takes the value from the Maybe, transforms it,
     # puts back into a Maybe and returns it.
-    # @param [Block] A block accepting the value and returning a transformed value.
-    # @return [FFMonads::Maybe] The value from the block wrapped in a Maybe.
+    # @param block [Block] a block accepting the value and returning a transformed value.
+    # @return [FFMonads::Maybe] the value from the block wrapped in a Maybe.
     # @example Called with some, it will always return some.
     #   some(42).map {|x| x + 1} # returns some(43)
     # @example Called with none, it will always return none.
     #   none.map {|x| x + 1} # returns none
-    def map(&); end
+    def map(&block); end # rubocop: disable Naming/BlockForwarding
 
     # Applies an optional value to a block.
     # It takes the value from the Maybe, transforms it,
     # and returns it without putting it back into a Maybe.
     # It assumes the block will put the value back into
     # a Maybe.
-    # @param [Block] A block accepting and returning a transformed value wrapped in a Maybe.
+    # @param block [Block] a block accepting and returning a transformed value wrapped in a Maybe.
     # @return [FFMonads::Maybe] Maybe returned from the block.
     # @example `.and_then` allows you to choose the Maybe to return.
     #   # This returns none
@@ -41,7 +41,7 @@ module FFMonads
     #       some(100 / x)
     #     end
     #   end
-    def and_then(&); end
+    def and_then(&block); end # rubocop: disable Naming/BlockForwarding
 
     # Returns true if the Maybe is none.
     # @return [Boolean]
@@ -58,9 +58,9 @@ module FFMonads
     def v!; end
 
     # Returns true if this Maybe contains an equivalent value as the other Maybe.
-    # @param [FFMonads::Maybe] other
+    # @param other [FFMonads::Maybe] the other Maybe to compare to
     # @return [Boolean]
-    def eql?; end
+    def eql?(other); end
 
     # Returns a string representation of the Maybe.
     # @return [String]
@@ -83,6 +83,7 @@ module FFMonads
       to_s
     end
 
+    # Represents a value that exists.
     class Some < Maybe
       # rubocop: disable Lint/MissingSuper
       def initialize(value)
@@ -90,6 +91,15 @@ module FFMonads
       end
       # rubocop: enable Lint/MissingSuper
 
+      # deconstruct value for case statements
+      # @return [Array]
+      # @example
+      #   case some(42)
+      #   in Some(Integer => x)
+      #     x
+      #   in None
+      #     0
+      #   end
       def deconstruct
         [@value]
       end
@@ -129,7 +139,17 @@ module FFMonads
       end
     end
 
+    # Represents a value that doesn't exist
     class None < Maybe
+      # deconstruct value for case statements
+      # @return [Array]
+      # @example
+      #   case some(42)
+      #   in Some(Integer => x)
+      #     x
+      #   in None
+      #     0
+      #   end
       def deconstruct
         []
       end
@@ -167,16 +187,26 @@ module FFMonads
       end
     end
 
+    # Mixin module for Maybe
+    # @example You can mix in Maybe functionality with:
+    #   include FFMonads::Maybe::Mixin
     module Mixin
+      # Mix in None and Some constants to the current Class/Module.
+      # Gives access to None and Some without needing a namespace.
       def add_classes
         const_set('Some', Some)
         const_set('None', None)
       end
 
+      # Create a Some containing the value
+      # @param value [Something] the value to wrap in a Some
+      # @return [Something] The value wrapped in a Some
       def some(value)
         Some.new(value)
       end
 
+      # Create a None
+      # @return [None]
       def none
         None.new
       end

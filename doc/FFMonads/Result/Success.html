@@ -4,7 +4,7 @@
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>
-  Class: FFMonads::Maybe::Some
+  Class: FFMonads::Result::Success
   
     &mdash; Documentation by YARD 0.9.37
   
@@ -15,7 +15,7 @@
   <link rel="stylesheet" href="../../css/common.css" type="text/css" />
 
 <script type="text/javascript">
-  pathId = "FFMonads::Maybe::Some";
+  pathId = "FFMonads::Result::Success";
   relpath = '../../';
 </script>
 
@@ -37,9 +37,9 @@
         <div id="menu">
   
     <a href="../../_index.html">Index (S)</a> &raquo;
-    <span class='title'><span class='object_link'><a href="../../FFMonads.html" title="FFMonads (module)">FFMonads</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../Maybe.html" title="FFMonads::Maybe (class)">Maybe</a></span></span>
+    <span class='title'><span class='object_link'><a href="../../FFMonads.html" title="FFMonads (module)">FFMonads</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../Result.html" title="FFMonads::Result (class)">Result</a></span></span>
      &raquo; 
-    <span class="title">Some</span>
+    <span class="title">Success</span>
   
 </div>
 
@@ -59,7 +59,7 @@
         <div class="clear"></div>
       </div>
 
-      <div id="content"><h1>Class: FFMonads::Maybe::Some
+      <div id="content"><h1>Class: FFMonads::Result::Success
   
   
   
@@ -69,14 +69,14 @@
   <dl>
     <dt>Inherits:</dt>
     <dd>
-      <span class="inheritName"><span class='object_link'><a href="../Maybe.html" title="FFMonads::Maybe (class)">FFMonads::Maybe</a></span></span>
+      <span class="inheritName"><span class='object_link'><a href="../Result.html" title="FFMonads::Result (class)">FFMonads::Result</a></span></span>
       
         <ul class="fullTree">
           <li>Object</li>
           
-            <li class="next"><span class='object_link'><a href="../Maybe.html" title="FFMonads::Maybe (class)">FFMonads::Maybe</a></span></li>
+            <li class="next"><span class='object_link'><a href="../Result.html" title="FFMonads::Result (class)">FFMonads::Result</a></span></li>
           
-            <li class="next">FFMonads::Maybe::Some</li>
+            <li class="next">FFMonads::Result::Success</li>
           
         </ul>
         <a href="#" class="inheritanceTree">show all</a>
@@ -96,7 +96,7 @@
   
   <dl>
     <dt>Defined in:</dt>
-    <dd>lib/ff_monads/maybe.rb</dd>
+    <dd>lib/ff_monads/result.rb</dd>
   </dl>
   
 </div>
@@ -104,7 +104,7 @@
 <h2>Overview</h2><div class="docstring">
   <div class="discussion">
     
-<p>Represents a value that exists.</p>
+<p>Represents a value that succeeded.</p>
 
 
   </div>
@@ -198,7 +198,51 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#initialize-instance_method" title="#initialize (instance method)">#<strong>initialize</strong>(value)  &#x21d2; Some </a>
+      <a href="#failure-instance_method" title="#failure (instance method)">#<strong>failure</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#failure%3F-instance_method" title="#failure? (instance method)">#<strong>failure?</strong>  &#x21d2; Boolean </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#initialize-instance_method" title="#initialize (instance method)">#<strong>initialize</strong>(value)  &#x21d2; Success </a>
     
 
     
@@ -246,29 +290,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#none%3F-instance_method" title="#none? (instance method)">#<strong>none?</strong>  &#x21d2; Boolean </a>
-    
-
-    
-  </span>
-  
-  
-  
-  
-  
-  
-  
-
-  
-    <span class="summary_desc"><div class='inline'></div></span>
-  
-</li>
-
-      
-        <li class="public ">
-  <span class="summary_signature">
-    
-      <a href="#some%3F-instance_method" title="#some? (instance method)">#<strong>some?</strong>  &#x21d2; Boolean </a>
+      <a href="#success%3F-instance_method" title="#success? (instance method)">#<strong>success?</strong>  &#x21d2; Boolean </a>
     
 
     
@@ -365,8 +387,8 @@
   
   
   
-  <h3 class="inherited">Methods inherited from <span class='object_link'><a href="../Maybe.html" title="FFMonads::Maybe (class)">FFMonads::Maybe</a></span></h3>
-  <p class="inherited"><span class='object_link'><a href="../Maybe.html#inspect-instance_method" title="FFMonads::Maybe#inspect (method)">#inspect</a></span></p>
+  <h3 class="inherited">Methods inherited from <span class='object_link'><a href="../Result.html" title="FFMonads::Result (class)">FFMonads::Result</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="../Result.html#inspect-instance_method" title="FFMonads::Result#inspect (method)">#inspect</a></span></p>
 
   
   
@@ -376,15 +398,15 @@
   
   
   
-  <h3 class="inherited">Methods included from <span class='object_link'><a href="Mixin.html" title="FFMonads::Maybe::Mixin (module)">Mixin</a></span></h3>
-  <p class="inherited"><span class='object_link'><a href="Mixin.html#add_classes-instance_method" title="FFMonads::Maybe::Mixin#add_classes (method)">#add_classes</a></span>, <span class='object_link'><a href="Mixin.html#none-instance_method" title="FFMonads::Maybe::Mixin#none (method)">#none</a></span>, <span class='object_link'><a href="Mixin.html#some-instance_method" title="FFMonads::Maybe::Mixin#some (method)">#some</a></span></p>
+  <h3 class="inherited">Methods included from <span class='object_link'><a href="Mixin.html" title="FFMonads::Result::Mixin (module)">Mixin</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="Mixin.html#add_classes-instance_method" title="FFMonads::Result::Mixin#add_classes (method)">#add_classes</a></span>, <span class='object_link'><a href="Mixin.html#success-instance_method" title="FFMonads::Result::Mixin#success (method)">#success</a></span></p>
 <div id="constructor_details" class="method_details_list">
   <h2>Constructor Details</h2>
   
     <div class="method_details first">
   <h3 class="signature first" id="initialize-instance_method">
   
-    #<strong>initialize</strong>(value)  &#x21d2; <tt><span class='object_link'><a href="" title="FFMonads::Maybe::Some (class)">Some</a></span></tt> 
+    #<strong>initialize</strong>(value)  &#x21d2; <tt><span class='object_link'><a href="" title="FFMonads::Result::Success (class)">Success</a></span></tt> 
   
 
   
@@ -407,12 +429,12 @@
       <pre class="lines">
 
 
-89
-90
-91</pre>
+95
+96
+97</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/ff_monads/maybe.rb', line 89</span>
+      <pre class="code"><span class="info file"># File 'lib/ff_monads/result.rb', line 95</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
   <span class='ivar'>@value</span> <span class='op'>=</span> <span class='id identifier rubyid_value'>value</span>
@@ -444,12 +466,12 @@
       <pre class="lines">
 
 
-119
-120
-121</pre>
+125
+126
+127</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/ff_monads/maybe.rb', line 119</span>
+      <pre class="code"><span class="info file"># File 'lib/ff_monads/result.rb', line 125</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_and_then'>and_then</span><span class='lparen'>(</span><span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_block'>block</span><span class='period'>.</span><span class='id identifier rubyid_call'>call</span><span class='lparen'>(</span><span class='ivar'>@value</span><span class='rparen'>)</span>
@@ -482,11 +504,11 @@
     <h4 class="tag_title">Examples:</h4>
     
       
-      <pre class="example code"><code><span class='kw'>case</span> <span class='id identifier rubyid_some'>some</span><span class='lparen'>(</span><span class='int'>42</span><span class='rparen'>)</span>
-<span class='kw'>in</span> <span class='const'><span class='object_link'><a href="" title="FFMonads::Maybe::Some (class)">Some</a></span></span><span class='lparen'>(</span><span class='const'>Integer</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_x'>x</span><span class='rparen'>)</span>
+      <pre class="example code"><code><span class='kw'>case</span> <span class='id identifier rubyid_success'>success</span><span class='lparen'>(</span><span class='int'>42</span><span class='rparen'>)</span>
+<span class='kw'>in</span> <span class='const'><span class='object_link'><a href="" title="FFMonads::Result::Success (class)">Success</a></span></span><span class='lparen'>(</span><span class='const'>Integer</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_x'>x</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_x'>x</span>
-<span class='kw'>in</span> <span class='const'><span class='object_link'><a href="None.html" title="FFMonads::Maybe::None (class)">None</a></span></span>
-  <span class='int'>0</span>
+<span class='kw'>in</span> <span class='const'><span class='object_link'><a href="Failure.html" title="FFMonads::Result::Failure (class)">Failure</a></span></span><span class='lparen'>(</span><span class='const'>String</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_y'>y</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_y'>y</span>
 <span class='kw'>end</span></code></pre>
     
   </div>
@@ -511,12 +533,12 @@
       <pre class="lines">
 
 
-103
-104
-105</pre>
+109
+110
+111</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/ff_monads/maybe.rb', line 103</span>
+      <pre class="code"><span class="info file"># File 'lib/ff_monads/result.rb', line 109</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_deconstruct'>deconstruct</span>
   <span class='lbracket'>[</span><span class='ivar'>@value</span><span class='rbracket'>]</span>
@@ -563,19 +585,101 @@
       <pre class="lines">
 
 
-127
-128
-129
-130
-131</pre>
+137
+138
+139
+140
+141</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/ff_monads/maybe.rb', line 127</span>
+      <pre class="code"><span class="info file"># File 'lib/ff_monads/result.rb', line 137</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_eql?'>eql?</span><span class='lparen'>(</span><span class='id identifier rubyid_other'>other</span><span class='rparen'>)</span>
-  <span class='kw'>return</span> <span class='kw'>false</span> <span class='kw'>unless</span> <span class='id identifier rubyid_other'>other</span><span class='period'>.</span><span class='id identifier rubyid_is_a?'>is_a?</span><span class='lparen'>(</span><span class='const'><span class='object_link'><a href="" title="FFMonads::Maybe::Some (class)">Some</a></span></span><span class='rparen'>)</span>
+  <span class='kw'>return</span> <span class='kw'>false</span> <span class='kw'>unless</span> <span class='id identifier rubyid_other'>other</span><span class='period'>.</span><span class='id identifier rubyid_is_a?'>is_a?</span><span class='lparen'>(</span><span class='const'><span class='object_link'><a href="" title="FFMonads::Result::Success (class)">Success</a></span></span><span class='rparen'>)</span>
 
   <span class='ivar'>@value</span><span class='period'>.</span><span class='id identifier rubyid_eql?'>eql?</span><span class='lparen'>(</span><span class='id identifier rubyid_other'>other</span><span class='period'>.</span><span class='id identifier rubyid_v!'>v!</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="failure-instance_method">
+  
+    #<strong>failure</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+133
+134
+135</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/ff_monads/result.rb', line 133</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_failure'>failure</span>
+  <span class='kw'>nil</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="failure?-instance_method">
+  
+    #<strong>failure?</strong>  &#x21d2; <tt>Boolean</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+113
+114
+115</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/ff_monads/result.rb', line 113</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_failure?'>failure?</span>
+  <span class='kw'>false</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -597,12 +701,12 @@
       <pre class="lines">
 
 
-115
-116
-117</pre>
+121
+122
+123</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/ff_monads/maybe.rb', line 115</span>
+      <pre class="code"><span class="info file"># File 'lib/ff_monads/result.rb', line 121</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_map'>map</span><span class='lparen'>(</span><span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span><span class='rparen'>)</span>
   <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_block'>block</span><span class='period'>.</span><span class='id identifier rubyid_call'>call</span><span class='lparen'>(</span><span class='ivar'>@value</span><span class='rparen'>)</span><span class='rparen'>)</span>
@@ -613,61 +717,9 @@
 </div>
     
       <div class="method_details ">
-  <h3 class="signature " id="none?-instance_method">
+  <h3 class="signature " id="success?-instance_method">
   
-    #<strong>none?</strong>  &#x21d2; <tt>Boolean</tt> 
-  
-
-  
-
-  
-</h3><div class="docstring">
-  <div class="discussion">
-    
-
-  </div>
-</div>
-<div class="tags">
-  
-<p class="tag_title">Returns:</p>
-<ul class="return">
-  
-    <li>
-      
-      
-        <span class='type'>(<tt>Boolean</tt>)</span>
-      
-      
-      
-    </li>
-  
-</ul>
-
-</div><table class="source_code">
-  <tr>
-    <td>
-      <pre class="lines">
-
-
-107
-108
-109</pre>
-    </td>
-    <td>
-      <pre class="code"><span class="info file"># File 'lib/ff_monads/maybe.rb', line 107</span>
-
-<span class='kw'>def</span> <span class='id identifier rubyid_none?'>none?</span>
-  <span class='kw'>false</span>
-<span class='kw'>end</span></pre>
-    </td>
-  </tr>
-</table>
-</div>
-    
-      <div class="method_details ">
-  <h3 class="signature " id="some?-instance_method">
-  
-    #<strong>some?</strong>  &#x21d2; <tt>Boolean</tt> 
+    #<strong>success?</strong>  &#x21d2; <tt>Boolean</tt> 
   
 
   
@@ -701,14 +753,14 @@
       <pre class="lines">
 
 
-111
-112
-113</pre>
+117
+118
+119</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/ff_monads/maybe.rb', line 111</span>
+      <pre class="code"><span class="info file"># File 'lib/ff_monads/result.rb', line 117</span>
 
-<span class='kw'>def</span> <span class='id identifier rubyid_some?'>some?</span>
+<span class='kw'>def</span> <span class='id identifier rubyid_success?'>success?</span>
   <span class='kw'>true</span>
 <span class='kw'>end</span></pre>
     </td>
@@ -731,15 +783,15 @@
       <pre class="lines">
 
 
-137
-138
-139</pre>
+147
+148
+149</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/ff_monads/maybe.rb', line 137</span>
+      <pre class="code"><span class="info file"># File 'lib/ff_monads/result.rb', line 147</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_to_h'>to_h</span>
-  <span class='lbrace'>{</span> <span class='label'>type:</span> <span class='const'><span class='object_link'><a href="" title="FFMonads::Maybe::Some (class)">Some</a></span></span><span class='comma'>,</span> <span class='label'>value:</span> <span class='ivar'>@value</span> <span class='rbrace'>}</span>
+  <span class='lbrace'>{</span> <span class='label'>type:</span> <span class='const'><span class='object_link'><a href="" title="FFMonads::Result::Success (class)">Success</a></span></span><span class='comma'>,</span> <span class='label'>value:</span> <span class='ivar'>@value</span> <span class='rbrace'>}</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -761,15 +813,15 @@
       <pre class="lines">
 
 
-133
-134
-135</pre>
+143
+144
+145</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/ff_monads/maybe.rb', line 133</span>
+      <pre class="code"><span class="info file"># File 'lib/ff_monads/result.rb', line 143</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_to_s'>to_s</span>
-  <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>some(</span><span class='embexpr_beg'>#{</span><span class='ivar'>@value</span><span class='period'>.</span><span class='id identifier rubyid_inspect'>inspect</span><span class='embexpr_end'>}</span><span class='tstring_content'>)</span><span class='tstring_end'>&quot;</span></span>
+  <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>success(</span><span class='embexpr_beg'>#{</span><span class='ivar'>@value</span><span class='period'>.</span><span class='id identifier rubyid_inspect'>inspect</span><span class='embexpr_end'>}</span><span class='tstring_content'>)</span><span class='tstring_end'>&quot;</span></span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -791,12 +843,12 @@
       <pre class="lines">
 
 
-123
-124
-125</pre>
+129
+130
+131</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/ff_monads/maybe.rb', line 123</span>
+      <pre class="code"><span class="info file"># File 'lib/ff_monads/result.rb', line 129</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_v!'>v!</span>
   <span class='ivar'>@value</span>

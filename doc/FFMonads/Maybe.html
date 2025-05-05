@@ -6,7 +6,7 @@
 <title>
   Class: FFMonads::Maybe
   
-    &mdash; Documentation by YARD 0.9.34
+    &mdash; Documentation by YARD 0.9.37
   
 </title>
 
@@ -115,26 +115,26 @@
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
-        <p class="example_title"><div class='inline'>
+        <h5 class="example_title"><div class='inline'>
 <p>You can mix in this module.</p>
-</div></p>
+</div></h5>
       
-      <pre class="example code"><code><span class='id identifier rubyid_include'>include</span> <span class='const'>FFMondas</span><span class='op'>::</span><span class='const'>Maybe</span><span class='op'>::</span><span class='const'>Mixin</span></code></pre>
+      <pre class="example code"><code><span class='id identifier rubyid_include'>include</span> <span class='const'><span class='object_link'><a href="../FFMonads.html" title="FFMonads (module)">FFMonads</a></span></span><span class='op'>::</span><span class='const'>Maybe</span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Maybe/Mixin.html" title="FFMonads::Maybe::Mixin (module)">Mixin</a></span></span></code></pre>
     
       
-        <p class="example_title"><div class='inline'>
-<p>A value that exists.</p>
-</div></p>
+        <h5 class="example_title"><div class='inline'>
+<p>a value that exists.</p>
+</div></h5>
       
       <pre class="example code"><code><span class='id identifier rubyid_some'>some</span><span class='lparen'>(</span><span class='int'>42</span><span class='rparen'>)</span></code></pre>
     
       
-        <p class="example_title"><div class='inline'>
-<p>A value that does not exist.</p>
-</div></p>
+        <h5 class="example_title"><div class='inline'>
+<p>a value that does not exist.</p>
+</div></h5>
       
       <pre class="example code"><code><span class='id identifier rubyid_none'>none</span></code></pre>
     
@@ -175,7 +175,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#and_then-instance_method" title="#and_then (instance method)">#<strong>and_then</strong>  &#x21d2; Object </a>
+      <a href="#and_then-instance_method" title="#and_then (instance method)">#<strong>and_then</strong>(&amp;block)  &#x21d2; FFMonads::Maybe </a>
     
 
     
@@ -189,7 +189,33 @@
   
 
   
-    <span class="summary_desc"><div class='inline'></div></span>
+    <span class="summary_desc"><div class='inline'>
+<p>Applies an optional value to a block.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#eql%3F-instance_method" title="#eql? (instance method)">#<strong>eql?</strong>(other)  &#x21d2; Boolean </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns true if this Maybe contains an equivalent value as the other Maybe.</p>
+</div></span>
   
 </li>
 
@@ -211,7 +237,9 @@
   
 
   
-    <span class="summary_desc"><div class='inline'></div></span>
+    <span class="summary_desc"><div class='inline'>
+<p>Returns a string representation of the Maybe.</p>
+</div></span>
   
 </li>
 
@@ -219,7 +247,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#map-instance_method" title="#map (instance method)">#<strong>map</strong>  &#x21d2; Object </a>
+      <a href="#map-instance_method" title="#map (instance method)">#<strong>map</strong>(&amp;block)  &#x21d2; FFMonads::Maybe </a>
     
 
     
@@ -234,7 +262,127 @@
 
   
     <span class="summary_desc"><div class='inline'>
-<p>Applies an optional value to a block, returning a Maybe.</p>
+<p>Applies an optional value to a block.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#none%3F-instance_method" title="#none? (instance method)">#<strong>none?</strong>  &#x21d2; Boolean </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns true if the Maybe is none.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#some%3F-instance_method" title="#some? (instance method)">#<strong>some?</strong>  &#x21d2; Boolean </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns true if the Maybe is some.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#to_h-instance_method" title="#to_h (instance method)">#<strong>to_h</strong>  &#x21d2; Hash&lt;Symbol, Value&gt; </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns a hash representation of the Maybe.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#to_s-instance_method" title="#to_s (instance method)">#<strong>to_s</strong>  &#x21d2; String </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns a string representation of the Maybe.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#v!-instance_method" title="#v! (instance method)">#<strong>v!</strong>  &#x21d2; Something </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the value in the Maybe.</p>
 </div></span>
   
 </li>
@@ -253,7 +401,7 @@
   
   
   <h3 class="inherited">Methods included from <span class='object_link'><a href="Maybe/Mixin.html" title="FFMonads::Maybe::Mixin (module)">Mixin</a></span></h3>
-  <p class="inherited"><span class='object_link'><a href="Maybe/Mixin.html#none-instance_method" title="FFMonads::Maybe::Mixin#none (method)">#none</a></span>, <span class='object_link'><a href="Maybe/Mixin.html#some-instance_method" title="FFMonads::Maybe::Mixin#some (method)">#some</a></span></p>
+  <p class="inherited"><span class='object_link'><a href="Maybe/Mixin.html#add_classes-instance_method" title="FFMonads::Maybe::Mixin#add_classes (method)">#add_classes</a></span>, <span class='object_link'><a href="Maybe/Mixin.html#none-instance_method" title="FFMonads::Maybe::Mixin#none (method)">#none</a></span>, <span class='object_link'><a href="Maybe/Mixin.html#some-instance_method" title="FFMonads::Maybe::Mixin#some (method)">#some</a></span></p>
 
 
   <div id="instance_method_details" class="method_details_list">
@@ -263,7 +411,7 @@
       <div class="method_details first">
   <h3 class="signature first" id="and_then-instance_method">
   
-    #<strong>and_then</strong>  &#x21d2; <tt>Object</tt> 
+    #<strong>and_then</strong>(&amp;block)  &#x21d2; <tt><span class='object_link'><a href="" title="FFMonads::Maybe (class)">FFMonads::Maybe</a></span></tt> 
   
 
   
@@ -272,18 +420,20 @@
 </h3><div class="docstring">
   <div class="discussion">
     
+<p>Applies an optional value to a block. It takes the value from the Maybe, transforms it, and returns it without putting it back into a Maybe. It assumes the block will put the value back into a Maybe.</p>
+
 
   </div>
 </div>
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
-        <p class="example_title"><div class='inline'>
-<p>‘.and_then` allows you to return a monad instead.</p>
-</div></p>
+        <h5 class="example_title"><div class='inline'>
+<p>‘.and_then` allows you to choose the Maybe to return.</p>
+</div></h5>
       
       <pre class="example code"><code><span class='comment'># This returns none
 </span><span class='id identifier rubyid_some'>some</span><span class='lparen'>(</span><span class='int'>0</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_and_then'>and_then</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_x'>x</span><span class='op'>|</span>
@@ -295,7 +445,45 @@
 <span class='kw'>end</span></code></pre>
     
   </div>
+<p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>block</span>
+      
+      
+        <span class='type'>(<tt>Block</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>a block accepting and returning a transformed value wrapped in a Maybe.</p>
+</div>
+      
+    </li>
+  
+</ul>
 
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="FFMonads::Maybe (class)">FFMonads::Maybe</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Maybe returned from the block.</p>
+</div>
+      
+    </li>
+  
+</ul>
 
 </div><table class="source_code">
   <tr>
@@ -303,12 +491,82 @@
       <pre class="lines">
 
 
-33</pre>
+44</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/ff_monads/maybe.rb', line 33</span>
+      <pre class="code"><span class="info file"># File 'lib/ff_monads/maybe.rb', line 44</span>
 
-<span class='kw'>def</span> <span class='id identifier rubyid_and_then'>and_then</span><span class='lparen'>(</span><span class='op'>&amp;</span><span class='rparen'>)</span><span class='semicolon'>;</span> <span class='kw'>end</span></pre>
+<span class='kw'>def</span> <span class='id identifier rubyid_and_then'>and_then</span><span class='lparen'>(</span><span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span><span class='rparen'>)</span><span class='semicolon'>;</span> <span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="eql?-instance_method">
+  
+    #<strong>eql?</strong>(other)  &#x21d2; <tt>Boolean</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns true if this Maybe contains an equivalent value as the other Maybe.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>other</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="FFMonads::Maybe (class)">FFMonads::Maybe</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the other Maybe to compare to</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+63</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/ff_monads/maybe.rb', line 63</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_eql?'>eql?</span><span class='lparen'>(</span><span class='id identifier rubyid_other'>other</span><span class='rparen'>)</span><span class='semicolon'>;</span> <span class='kw'>end</span></pre>
     </td>
   </tr>
 </table>
@@ -323,18 +581,36 @@
   
 
   
-</h3><table class="source_code">
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns a string representation of the Maybe</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+  <p class="tag_title">See Also:</p>
+  <ul class="see">
+    
+      <li><span class='object_link'><a href="#to_s-instance_method" title="FFMonads::Maybe#to_s (method)">#to_s</a></span></li>
+    
+  </ul>
+
+</div><table class="source_code">
   <tr>
     <td>
       <pre class="lines">
 
 
-35
-36
-37</pre>
+82
+83
+84</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/ff_monads/maybe.rb', line 35</span>
+      <pre class="code"><span class="info file"># File 'lib/ff_monads/maybe.rb', line 82</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_inspect'>inspect</span>
   <span class='id identifier rubyid_to_s'>to_s</span>
@@ -347,7 +623,7 @@
       <div class="method_details ">
   <h3 class="signature " id="map-instance_method">
   
-    #<strong>map</strong>  &#x21d2; <tt>Object</tt> 
+    #<strong>map</strong>(&amp;block)  &#x21d2; <tt><span class='object_link'><a href="" title="FFMonads::Maybe (class)">FFMonads::Maybe</a></span></tt> 
   
 
   
@@ -356,7 +632,7 @@
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Applies an optional value to a block, returning a Maybe.</p>
+<p>Applies an optional value to a block. It takes the value from the Maybe, transforms it, puts back into a Maybe and returns it.</p>
 
 
   </div>
@@ -364,24 +640,62 @@
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
-        <p class="example_title"><div class='inline'>
-<p>With a value that exists.</p>
-</div></p>
+        <h5 class="example_title"><div class='inline'>
+<p>Called with some, it will always return some.</p>
+</div></h5>
       
-      <pre class="example code"><code><span class='id identifier rubyid_some'>some</span><span class='lparen'>(</span><span class='int'>42</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span> <span class='lbrace'>{</span><span class='op'>|</span><span class='id identifier rubyid_x'>x</span><span class='op'>|</span> <span class='id identifier rubyid_x'>x</span> <span class='op'>+</span> <span class='int'>1</span><span class='rbrace'>}</span> <span class='comment'># returns some(42)</span></code></pre>
+      <pre class="example code"><code><span class='id identifier rubyid_some'>some</span><span class='lparen'>(</span><span class='int'>42</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span> <span class='lbrace'>{</span><span class='op'>|</span><span class='id identifier rubyid_x'>x</span><span class='op'>|</span> <span class='id identifier rubyid_x'>x</span> <span class='op'>+</span> <span class='int'>1</span><span class='rbrace'>}</span> <span class='comment'># returns some(43)</span></code></pre>
     
       
-        <p class="example_title"><div class='inline'>
-<p>With a value that does not exists.</p>
-</div></p>
+        <h5 class="example_title"><div class='inline'>
+<p>Called with none, it will always return none.</p>
+</div></h5>
       
       <pre class="example code"><code><span class='id identifier rubyid_none'>none</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span> <span class='lbrace'>{</span><span class='op'>|</span><span class='id identifier rubyid_x'>x</span><span class='op'>|</span> <span class='id identifier rubyid_x'>x</span> <span class='op'>+</span> <span class='int'>1</span><span class='rbrace'>}</span> <span class='comment'># returns none</span></code></pre>
     
   </div>
+<p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>block</span>
+      
+      
+        <span class='type'>(<tt>Block</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>a block accepting the value and returning a transformed value.</p>
+</div>
+      
+    </li>
+  
+</ul>
 
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="FFMonads::Maybe (class)">FFMonads::Maybe</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the value from the block wrapped in a Maybe.</p>
+</div>
+      
+    </li>
+  
+</ul>
 
 </div><table class="source_code">
   <tr>
@@ -389,12 +703,307 @@
       <pre class="lines">
 
 
-22</pre>
+26</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/ff_monads/maybe.rb', line 22</span>
+      <pre class="code"><span class="info file"># File 'lib/ff_monads/maybe.rb', line 26</span>
 
-<span class='kw'>def</span> <span class='id identifier rubyid_map'>map</span><span class='lparen'>(</span><span class='op'>&amp;</span><span class='rparen'>)</span><span class='semicolon'>;</span> <span class='kw'>end</span></pre>
+<span class='kw'>def</span> <span class='id identifier rubyid_map'>map</span><span class='lparen'>(</span><span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span><span class='rparen'>)</span><span class='semicolon'>;</span> <span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="none?-instance_method">
+  
+    #<strong>none?</strong>  &#x21d2; <tt>Boolean</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns true if the Maybe is none.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+48</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/ff_monads/maybe.rb', line 48</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_none?'>none?</span><span class='semicolon'>;</span> <span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="some?-instance_method">
+  
+    #<strong>some?</strong>  &#x21d2; <tt>Boolean</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns true if the Maybe is some.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+52</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/ff_monads/maybe.rb', line 52</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_some?'>some?</span><span class='semicolon'>;</span> <span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="to_h-instance_method">
+  
+    #<strong>to_h</strong>  &#x21d2; <tt>Hash&lt;Symbol, Value&gt;</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns a hash representation of the Maybe. Possibly for serialisation???</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <h4 class="tag_title">Examples:</h4>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_some'>some</span><span class='lparen'>(</span><span class='int'>42</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_to_h'>to_h</span> <span class='comment'># returns { type: Some, value: 42 }
+</span><span class='id identifier rubyid_none'>none</span><span class='period'>.</span><span class='id identifier rubyid_to_h'>to_h</span>     <span class='comment'># returns { type: None, value: nil }</span></code></pre>
+    
+  </div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Hash&lt;Symbol, Value&gt;</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+78</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/ff_monads/maybe.rb', line 78</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_to_h'>to_h</span><span class='semicolon'>;</span> <span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="to_s-instance_method">
+  
+    #<strong>to_s</strong>  &#x21d2; <tt>String</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns a string representation of the Maybe.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <h4 class="tag_title">Examples:</h4>
+    
+      
+        <h5 class="example_title"><div class='inline'>
+<p>Mostly used for #inspect.</p>
+</div></h5>
+      
+      <pre class="example code"><code><span class='id identifier rubyid_some'>some</span><span class='lparen'>(</span><span class='int'>42</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span> <span class='comment'># returns &quot;some(42)&quot;
+</span><span class='id identifier rubyid_none'>none</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span>     <span class='comment'># returns &quot;none&quot;</span></code></pre>
+    
+  </div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+70</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/ff_monads/maybe.rb', line 70</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_to_s'>to_s</span><span class='semicolon'>;</span> <span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="v!-instance_method">
+  
+    #<strong>v!</strong>  &#x21d2; <tt>Something</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns the value in the Maybe. Raises NoValueError if the Maybe is none.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Something</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the value in the Maybe.</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Raises:</p>
+<ul class="raise">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="NoValueError.html" title="FFMonads::NoValueError (class)">FFMonads::NoValueError</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>if the Maybe is none.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+58</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/ff_monads/maybe.rb', line 58</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_v!'>v!</span><span class='semicolon'>;</span> <span class='kw'>end</span></pre>
     </td>
   </tr>
 </table>
@@ -405,9 +1014,9 @@
 </div>
 
       <div id="footer">
-  Generated on Sun Oct  8 15:55:15 2023 by
+  Generated on Mon May  5 10:36:29 2025 by
   <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.34 (ruby-3.2.2).
+  0.9.37 (ruby-3.3.6).
 </div>
 
     </div>
